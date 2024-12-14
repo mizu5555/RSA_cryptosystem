@@ -104,9 +104,13 @@ Final Project Presentation, NCU Assembly Fall 2024
 * `main PROC`主程式 
      - 開啟 `encryptinput.txt` 文件，讀取三個數字M, p, q到buffer
      - RSA 加密運算
+  
         (1) 計算 n = p*q
+   
         (2) 計算 φ(n) = (p-1)(q-1)
+   
         (3) 呼叫`ExtendedEuclid PROC` 計算私鑰 d
+   
         (4) 呼叫`Modpow PROC`計算加密結果 C
      - 呼叫 `WriteNumToFile PROC` 
         將計算結果參數(C, d, n)輸出到 `encryptoutput.txt` 
@@ -115,24 +119,33 @@ Final Project Presentation, NCU Assembly Fall 2024
      - 初始化變數：
     s1 = 1, s2 = 0 r1 = e, r2 = φ(n)
      - 當 r2 ≠ 0 時：
-    (1) 計算商和餘數
-    (2) 更新 r1, r2
-    (3) 更新 s1, s2
+       
+        (1) 計算商和餘數
+       
+        (2) 更新 r1, r2
+       
+        (3) 更新 s1, s2
      - 若結果為負數，加上 φ(n)
      - 返回私鑰 d
        
 * `ModPow PROC` 模冪計算 
      - 初始化結果為 1
      - 遍歷指數 e 的每個位元
-     (1) 若位元為 1，結果乘以底數
-     (2) 底數平方
-     (3) 每次運算都取模
+       
+         (1) 若位元為 1，結果乘以底數
+    
+         (2) 底數平方
+      
+         (3) 每次運算都取模
      - 返回最終結果密文 C
 * `WriteNumToFile PROC` 寫檔案
      - 將數字轉換為字串：
-     (1) 重複除以 10 取餘數，存入堆疊
-     (2) 從堆疊取出數字，轉換為 ASCII
-     (3) 寫入檔案
+       
+         (1) 重複除以 10 取餘數，存入堆疊
+    
+         (2) 從堆疊取出數字，轉換為 ASCII
+      
+         (3) 寫入檔案
 #### 2. rsa_decrypt.asm
 * `main PROC`主程式
     - 開啟 `decryptinput.txt`，讀取三個數字C, d, n到buffer
@@ -143,9 +156,12 @@ Final Project Presentation, NCU Assembly Fall 2024
 *  `ModPow PROC` 模冪計算 
     - 初始化結果為 1
     - 遍歷指數 d 的每個位元
-    (1) 若位元為 1，結果乘以底數(密文 C)
-    (2) 底數平方
-    (3) 每次運算都取模 n
+      
+        (1) 若位元為 1，結果乘以底數(密文 C)
+    
+        (2) 底數平方
+       
+        (3) 每次運算都取模 n
     - 返回最終結果明文 M
 * `WriteNumToFile PROC` 寫檔案
     - 同`rsa_encrypt.asm`
