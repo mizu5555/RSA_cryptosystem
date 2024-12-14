@@ -16,7 +16,7 @@ Final Project Presentation, NCU Assembly Fall 2024
 
 本系統是一個結合組合語言與 Python 的 RSA 加密工具，包含核心加解密運算以及方便操作的使用者介面。RSA 的核心運算部分以組合語言撰寫，以提升效能，而 GUI 則使用 Python 的 Tkinter 來提供友善的使用者介面。
 
-[demo影片](https://studio.youtube.com/video/H2J4Qg4fOTA/edit)
+[demo影片](https://studio.youtube.com/video/H2J4Qg4fOTA)
 
 
 
