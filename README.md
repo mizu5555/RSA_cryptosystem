@@ -38,7 +38,7 @@ Final Project Presentation, NCU Assembly Fall 2024
     |-- 其他               # windbg文件 (e.g.make.bat)
 ```
 #### 環境說明
-1. Assembly (for RSA encryption and decryption
+1. Assembly (for RSA encryption and decryption)
 
       ・Microsoft Macro Assembler (MASM): Version 6.11
 
