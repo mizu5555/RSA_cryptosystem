@@ -64,17 +64,17 @@ Final Project Presentation, NCU Assembly Fall 2024
   ・密文(Ciphertext)：`C`
   
 #### RSA公式說明
- ・模數：$n = \;p \;× \;q$
+- 模數：n = p × q
  
- ・歐拉函數值：$φ(n) = (p-1)(q-1)$
+- 歐拉函數值：φ(n) = (p-1)(q-1)
  
- ・公鑰：$gcd(e, φ(n)) = 1 \;, \text {1 < e < φ(n)}$
+- 公鑰：gcd(e, φ(n)) = 1, 1 < e < φ(n)
  
- ・私鑰：$e × d ≡ 1 (mod φ(n))$
+- 私鑰：e × d ≡ 1 (mod φ(n))
  
- ・加密：$C = M^e\; mod \;n$
+- 加密：C = M^e mod n
  
- ・解密：$M = C^d\; mod \;n$
+- 解密：M = C^d mod n
 
 #### 資料流向
 
