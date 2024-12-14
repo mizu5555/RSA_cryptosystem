@@ -36,28 +36,44 @@ Final Project Presentation, NCU Assembly Fall 2024
     |-- 其他               # windbg文件 (e.g.make.bat)
 ```
 #### 環境說明
-1. Assembly (for RSA encryption and decryption)
-  ・Microsoft Macro Assembler (MASM): Version 6.11
-  ・Microsoft 32-bit Incremental Linker: Version 5.10.7303
-  ・Irvine32 Library (last updated 2005-07-29, version unknown)
+1. Assembly (for RSA encryption and decryption
+
+      ・Microsoft Macro Assembler (MASM): Version 6.11
+
+      ・Microsoft 32-bit Incremental Linker: Version 5.10.7303
+      
+      ・Irvine32 Library (last updated 2005-07-29, version unknown)
+  
 2. Python (for GUI application)
-  ・tkinter 3.10.15
+
+      ・tkinter 3.10.15
 
 #### 變數說明
  ・Prime number (質數)： `p,q`
+ 
  ・Modulus (模數)：`n` 
+ 
  ・Public key (公鑰)：`e` ，這裡使用較小但安全的公鑰 e = 17
+ 
  ・Private key (密鑰)：`d` 
+ 
  ・歐拉函數 (Euler's totient function)：`φ(n)`
+ 
   ・明文(Plaintext)：`M`
+  
   ・密文(Ciphertext)：`C`
   
 #### RSA公式說明
  ・模數：$n = \;p \;× \;q$
+ 
  ・歐拉函數值：$φ(n) = (p-1)(q-1)$
+ 
  ・公鑰：$gcd(e, φ(n)) = 1 \;, \text {1 < e < φ(n)}$
+ 
  ・私鑰：$e × d ≡ 1 (mod φ(n))$
+ 
  ・加密：$C = M^e\; mod \;n$
+ 
  ・解密：$M = C^d\; mod \;n$
 
 #### 資料流向
@@ -75,8 +91,8 @@ Final Project Presentation, NCU Assembly Fall 2024
 | 頁面 |  GUI介面 | 說明 |
 | -------- | -------- | -------- |
 | 主頁     | ![RSA期末報告](https://hackmd.io/_uploads/Sy2u0ejNke.jpg)     |  包含四個按鈕：加密、解密、說明(!)、離開(EXIT) |
-| 加密 | ![image](https://hackmd.io/_uploads/SJanJWoEke.png) | 使用者須輸入M,p,q：寫入`encryptinput.txt`並呼叫`rsa_encrypt.exe`進行組語運算 讀入`encryptoutput.txt` 顯示C,d,n在螢幕上 |
-| 解密 | ![image](https://hackmd.io/_uploads/H19ayWjVye.png)| 使用者須輸入C,d,n 寫入`decryptinput.txt`並呼叫`rsa_decrypt.exe`進行組語運算 讀入`decryptoutput.txt` 顯示M在螢幕上 |
+| 加密 | ![image](https://hackmd.io/_uploads/SJanJWoEke.png) | 1.使用者須輸入 M,p,q <br>寫入`encryptinput.txt`<br> 呼叫`rsa_encrypt.exe`進行組語運算 <br>讀入`encryptoutput.txt` <br>2.顯示 C,d,n 在畫面中 |
+| 解密 | ![image](https://hackmd.io/_uploads/H19ayWjVye.png)| 1.使用者須輸入 C,d,n <br>寫入`decryptinput.txt` <br>呼叫`rsa_decrypt.exe`進行組語運算 <br>讀入`decryptoutput.txt` <br>2.顯示 M 在畫面中 |
 | 說明 | ![image](https://hackmd.io/_uploads/Syhdk-sVyl.png)| 包含程式使用說明 |
 | 離開 | ![image](https://hackmd.io/_uploads/Skhc1Wj4ye.png)| 點擊確認即結束程式 |
 
